@@ -1,3 +1,11 @@
 .App {
   font-family: sans-serif;
 }
+
+.light-theme {
+  color: rgb(242, 119, 119);
+}
+
+.dark-theme {
+  color: rgb(0, 50, 50);
+}
