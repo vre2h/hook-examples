@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import Counter from "./components/Counter";
 import Todos from "./components/Todos";
 import DidWillMountHook from "./components/DidWillMountHook";
+import ContextProvider from "./components/ContextAPI/ContextProvider";
 
 import "./styles.css";
 
@@ -13,15 +14,15 @@ function App() {
   return (
     <div className="App">
       <div>
-        <h2>#1 App</h2>
+        <h2>#1 App: Use State</h2>
         <Counter />
       </div>
       <div>
-        <h2>#2 App</h2>
+        <h2>#2 App: Use State</h2>
         <Todos />
       </div>
       <div>
-        <h2>#3 App</h2>
+        <h2>#3 App: Use Effect</h2>
         <input
           placeholder="Some Random Prop"
           value={randomProp}
@@ -31,6 +32,10 @@ function App() {
           randomProp={randomProp}
           randomPropOfComplexType={{ randomProp: "wow" }}
         />
+      </div>
+      <div>
+        <h2>#4 App: Context API</h2>
+        <ContextProvider />
       </div>
     </div>
   );
