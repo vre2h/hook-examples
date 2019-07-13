@@ -5,6 +5,7 @@ import Counter from "./components/Counter";
 import Todos from "./components/Todos";
 import DidWillMountHook from "./components/DidWillMountHook";
 import ContextProvider from "./components/ContextAPI/ContextProvider";
+import FakeFetch from "./components/FakeFetch";
 
 import "./styles.css";
 
@@ -36,6 +37,10 @@ function App() {
       <div>
         <h2>#4 App: Context API</h2>
         <ContextProvider />
+      </div>
+      <div>
+        <h2>Fake Fetch</h2>
+        <FakeFetch />
       </div>
     </div>
   );
