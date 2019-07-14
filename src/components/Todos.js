@@ -5,9 +5,8 @@ import {
 } from "../helpers/localStorage";
 
 function Todos() {
-  const importedTodosFromLocalStorage = JSON.parse(
-    loadFromLocalStorageByKey("hook-todos")
-  );
+  const importedTodosFromLocalStorage = loadFromLocalStorageByKey("hook-todos");
+
   const [todos, setTodos] = useState(importedTodosFromLocalStorage);
   const [todoValue, setTodoValue] = useState("");
   const [todoState, setTodoState] = useState("done");
