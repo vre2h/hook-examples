@@ -1,16 +1,26 @@
 import React, { useState } from "react";
+import {
+  loadFromLocalStorageByKey,
+  saveToLocalStorageByKey
+} from "../helpers/localStorage";
 
 function Todos() {
-  const [todos, setTodos] = useState([
-    { title: "Learn Hooks", state: "in process" }
-  ]);
+  const importedTodosFromLocalStorage = JSON.parse(
+    loadFromLocalStorageByKey("hook-todos")
+  );
+  const [todos, setTodos] = useState(importedTodosFromLocalStorage);
   const [todoValue, setTodoValue] = useState("");
   const [todoState, setTodoState] = useState("done");
 
   const saveTodo = () => {
     if (todoValue.trim() !== "") {
-      setTodos([...todos, { title: todoValue, state: todoState }]);
+      const updTodos = [
+        ...todos,
+        { title: todoValue, state: todoState, id: todos.length + 1 }
+      ];
+      setTodos(updTodos);
       setTodoValue("");
+      saveToLocalStorageByKey("hook-todos", JSON.stringify(updTodos));
     }
   };
 
@@ -31,8 +41,8 @@ function Todos() {
         <button onClick={saveTodo}>Add</button>
       </div>
       <ul>
-        {todos.map(({ title, state }) => (
-          <li>
+        {todos.map(({ title, state, id }) => (
+          <li key={id}>
             <span>{title}</span> - <span>{state}</span>
           </li>
         ))}
