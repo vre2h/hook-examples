@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,KACE,sBACF,CAEA,aACE,aACF,CAEA,YACE,aACF","file":"main.b8776601.chunk.css","sourcesContent":[".App {\n  font-family: sans-serif;\n}\n\n.light-theme {\n  color: rgb(242, 119, 119);\n}\n\n.dark-theme {\n  color: rgb(0, 50, 50);\n}\n"]}
